@@ -13,7 +13,7 @@ if (!artifact) {
 
 // exit early if we don't need to build
 const fs = require('fs')
-if (fs.existsSync('lib')) {
+if (fs.existsSync(artifact)) {
     process.exit()
 }
 
