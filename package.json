@@ -1,0 +1,9 @@
+{
+  "name": "ypib",
+  "version": "1.0.0",
+  "description": "postinstall-build with yarn",
+  "bin": {
+    "ypib": "ypib.js"
+  },
+  "license": "MIT"
+}
