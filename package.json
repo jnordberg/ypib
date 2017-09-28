@@ -1,10 +1,11 @@
 {
   "name": "ypib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "postinstall-build with yarn",
   "license": "MIT",
   "author": "Johan Nordberg <code@johan-nordberg.com>",
   "repository": "git@github.com:jnordberg/ypib.git",
+  "files": ["ypib.js"],
   "bin": {
     "ypib": "ypib.js"
   }
