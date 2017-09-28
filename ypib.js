@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 // exit if we are launched by our ourselves
-if (process.env['in-postinstall']) {
+const cwd = process.cwd()
+if (process.env['YPIB_INSTALL'] === cwd) {
     process.exit()
 }
 
@@ -18,7 +19,6 @@ if (fs.existsSync(artifact)) {
 }
 
 // exit early if we are top level
-const cwd = process.cwd()
 const path = require('path')
 const parentDirs = cwd.split(path.sep)
 if (!parentDirs.includes('node_modules')) {
@@ -28,7 +28,7 @@ if (!parentDirs.includes('node_modules')) {
 const {execSync} = require('child_process')
 const pkg = require(path.join(cwd, 'package.json'))
 const env = JSON.parse(JSON.stringify(process.env))
-env['in-postinstall'] = 'you-bet'
+env['YPIB_INSTALL'] = cwd
 
 // install devDependencies
 execSync('yarn install --non-interactive --pure-lockfile', {env})
